@@ -1,0 +1,109 @@
+{
+    "SettingsVersion": 1.2,
+	"SimMode": "Multirotor",
+	"Vehicles": {
+
+        "Drone1": {
+            "VehicleType": "SimpleFlight",
+            "AutoCreate": true,
+            "Sensors": {
+                "lidar_front":{
+					"SensorType": 6,
+                    "Enabled" : true,
+                    "NumberOfChannels": 1,
+                    "RotationsPerSecond": 0,
+                    "PointsPerSecond": 60,
+                    "X": 0, "Y": 0, "Z": 0,
+                    "Roll": 0, "Pitch": 0, "Yaw" : 0,
+                    "VerticalFOVUpper": 0,
+                    "VerticalFOVLower": 0,
+                    "HorizontalFOVStart": 0,
+                    "HorizontalFOVEnd": 0,
+					"Range" : 21.4,
+                    "DrawDebugPoints": true,
+                    "DataFrame": "SensorLocalFrame"
+                },
+				"lidar_right":{
+					"SensorType": 6,
+                    "Enabled" : true,
+                    "NumberOfChannels": 1,
+                    "RotationsPerSecond": 0,
+                    "PointsPerSecond": 60,
+                    "X": 0, "Y": 0, "Z": 0,
+                    "Roll": 0, "Pitch": 0, "Yaw" : 90,
+                    "VerticalFOVUpper": 0,
+                    "VerticalFOVLower": 0,
+                    "HorizontalFOVStart": 0,
+                    "HorizontalFOVEnd": 0,
+					"Range" : 21.4,
+                    "DrawDebugPoints": true,
+                    "DataFrame": "SensorLocalFrame"
+                },
+				"lidar_back":{
+					"SensorType": 6,
+                    "Enabled" : true,
+                    "NumberOfChannels": 1,
+                    "RotationsPerSecond": 0,
+                    "PointsPerSecond": 60,
+                    "X": 0, "Y": 0, "Z": 0,
+                    "Roll": 0, "Pitch": 0, "Yaw" : 180,
+                    "VerticalFOVUpper": 0,
+                    "VerticalFOVLower": 0,
+                    "HorizontalFOVStart": 0,
+                    "HorizontalFOVEnd": 0,
+					"Range" : 21.4,
+                    "DrawDebugPoints": true,
+                    "DataFrame": "SensorLocalFrame"
+                },
+				"lidar_left":{
+					"SensorType": 6,
+                    "Enabled" : true,
+                    "NumberOfChannels": 1,
+                    "RotationsPerSecond": 0,
+                    "PointsPerSecond": 60,
+                    "X": 0, "Y": 0, "Z": 0,
+                    "Roll": 0, "Pitch": 0, "Yaw" : 270,
+                    "VerticalFOVUpper": 0,
+                    "VerticalFOVLower": 0,
+                    "HorizontalFOVStart": 0,
+                    "HorizontalFOVEnd": 0,
+					"Range" : 21.4,
+                    "DrawDebugPoints": true,
+                    "DataFrame": "SensorLocalFrame"
+                },
+				"lidar_down":{
+					"SensorType": 6,
+                    "Enabled" : true,
+                    "NumberOfChannels": 1,
+                    "RotationsPerSecond": 0,
+                    "PointsPerSecond": 60,
+                    "X": 0, "Y": 0, "Z": 0,
+                    "Roll": 0, "Pitch": -90, "Yaw" : 0,
+                    "VerticalFOVUpper": 0,
+                    "VerticalFOVLower": 0,
+                    "HorizontalFOVStart": 0,
+                    "HorizontalFOVEnd": 0,
+					"Range" : 21.4,
+                    "DrawDebugPoints": true,
+                    "DataFrame": "SensorLocalFrame"
+                },
+				"lidar_up":{
+					"SensorType": 6,
+                    "Enabled" : true,
+                    "NumberOfChannels": 1,
+                    "RotationsPerSecond": 0,
+                    "PointsPerSecond": 60,
+                    "X": 0, "Y": 0, "Z": 0,
+                    "Roll": 0, "Pitch": 90, "Yaw" : 0,
+                    "VerticalFOVUpper": 0,
+                    "VerticalFOVLower": 0,
+                    "HorizontalFOVStart": 0,
+                    "HorizontalFOVEnd": 0,
+					"Range" : 21.4,
+                    "DrawDebugPoints": true,
+                    "DataFrame": "SensorLocalFrame"
+                }
+            }
+        }
+   }
+}
