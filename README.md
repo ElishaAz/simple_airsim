@@ -116,20 +116,19 @@ Most of the calls also have a 'wait' variable that when set to True will cause t
 When in Manual Mode, the drone can be controlled using the keyboard, where w/s is throttle, a/d is yaw, up/down is pitch and right/left is roll.
 
 ## Environments
-We built three environments to use with this project.
+We built a few environments to use with this project.
+
+### Line
+Link: [Google Drive](https://drive.google.com/file/d/13tKpQrCp1C_KVA_MBFir8fTUaLUs2mBy/view?usp=sharing).
 
 ### Square Maze
-A simple square track for testing. Link: [OneDrive](https://msmailarielac-my.sharepoint.com/:u:/g/personal/elisha_azaria_msmail_ariel_ac_il/ESNsvzo2chhLuDkATIK9_JgBl4nNDW_v6RLwxDZi_z_wQg?e=teu1ps)
-![Square Maze](Readme/images/square_maze.jpg)
+A simple square track for testing. Link: [Google Drive](https://drive.google.com/file/d/1GSrkXP904t9fP9e7vn6H4vraATs5MePH/view?usp=sharing).
 
-### Simple Maze
-A simple one-floor maze. Link: [OneDrive](https://msmailarielac-my.sharepoint.com/:u:/g/personal/elisha_azaria_msmail_ariel_ac_il/EaS9WIONOYhJsPwNMSr2GxEBZa7YWlYsqgv8CCFeA2Mhlw?e=nOt50h)
-![Simple Maze](Readme/images/simple_maze.jpg)
-
-### Two-Floor House
-A two-floor house with windows. Link: [OneDrive](https://msmailarielac-my.sharepoint.com/:u:/g/personal/elisha_azaria_msmail_ariel_ac_il/ET8IKtR-8DNFvCtVwA5tmsUBidi2rro0kMQn_4icS6EjMQ?e=2nDTIE)
-![Two-Floor House](Readme/images/two_floor_house.JPG)
+### Ellipse
+Link: [Google Drive](https://drive.google.com/file/d/1mrxdPTw27qcFmZ4fyL0wedawqf-rmjMb/view?usp=sharing).
 
 ### House
-A single-floor house based on a image of a house plan. Link: [OneDrive](https://msmailarielac-my.sharepoint.com/:u:/g/personal/elisha_azaria_msmail_ariel_ac_il/EaiukuUF36pIi0vfg8UWaVYBpSihfPR22djJFdmaZq7MeA?e=Gg13oU)
-Additional files: [OneDrive](https://msmailarielac-my.sharepoint.com/:f:/g/personal/elisha_azaria_msmail_ariel_ac_il/Eu1B9qfqdkhBtnKfiHg8p20Bnn--2v1Ypg-rwFxapuzojg?e=gTSyXf)
+A single-floor house based on a image of a house plan. Link: [Google Drive](https://drive.google.com/file/d/10Nqdo9WjlPTiH_wc9YrR3eiLKGZ-pQdP/view?usp=sharing)
+(Additional files: [Google Drive](https://drive.google.com/drive/folders/1m6iZjXdWv4bktlqauYL2k9xcMQaI-Goh?usp=sharing)).
+
+
