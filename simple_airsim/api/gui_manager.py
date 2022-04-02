@@ -6,7 +6,11 @@ from typing import Iterable
 
 from . import coordinate_system
 from .manager import Manager
-from .virtual_controller import VirtualController
+
+try:
+    from .virtual_controller import VirtualController
+except ImportError:
+    print("To use VirtualController install vJoy.")
 
 
 class GUIManager:
@@ -18,7 +22,7 @@ class GUIManager:
 
     # noinspection PyTypeChecker
     def __init__(self, manager: Manager, label_x: int, value_x, y: int, decimal_point: int,
-                 algo_info_rows: int = 3, use_virtual_controller: bool = True,
+                 algo_info_rows: int = 3, use_virtual_controller: bool = False,
                  main_font=('Helvitica', 15), title_font=('Helvitica', 25, 'bold'), algo_info_font=('Helvitica', 15)):
         """
 
