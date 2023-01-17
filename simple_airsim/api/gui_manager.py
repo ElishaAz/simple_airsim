@@ -25,7 +25,6 @@ class GUIManager:
                  algo_info_rows: int = 3, use_virtual_controller: bool = False,
                  main_font=('Helvitica', 15), title_font=('Helvitica', 25, 'bold'), algo_info_font=('Helvitica', 15)):
         """
-
         """
         sg.SetOptions(font=main_font)
         sg.theme('Dark Green 3')
@@ -49,7 +48,9 @@ class GUIManager:
 
             [sg.Text('Information:', font=title_font)],
             [sg.Text(size=(label_x, y), key='-TEL-'), sg.Text(size=(value_x, y), key='-TEL_VAL-'),
-             sg.Text(size=(label_x, y), key='-VEL-'), sg.Text(size=(value_x, y), key='-VEL_VAL-'),
+             #sg.Text(size=(label_x, y), key='-VEL-'), sg.Text(size=(value_x, y), key='-VEL_VAL-'),
+             sg.Text(size=(value_x, y), key='Pose'),
+
              sg.Text(size=(label_x, y), key='-LID-'), sg.Text(size=(value_x, y), key='-LID_VAL-')],
             [sg.Text('Algorithm Information:', font=title_font)],
             [sg.Text(size=(int(((label_x + value_x) * 3 + 5) / main_font[1] * algo_info_font[1]), algo_info_rows),
@@ -67,6 +68,7 @@ class GUIManager:
         self.manual_algo_running = False
         self.algo_info = ""
 
+
     # noinspection PyTypeChecker
     def _init_windows(self):
         self.main_window: sg.Window = sg.Window("Main Controls", self.main_layout, icon='../images/logo.ico',
@@ -77,9 +79,13 @@ class GUIManager:
             ':\n'.join(self.manager.get_position().keys()) +
             ':\n\n' + ':\n'.join(self.manager.get_orientation().keys()))
 
-        self.main_window['-VEL-'].update(
-            'Velocity:\n' +
-            ':\n'.join(self.manager.get_velocity().keys()))
+        self.main_window['Pose'].update(
+            'Pos:\n' +
+            ((self.pos(self.manager.get_lidars()))))
+
+        #self.main_window['-VEL-'].update(
+        #    'Velocity:\n' +
+        #    ':\n'.join(self.manager.get_velocity().keys()))
 
         self.main_window['-LID-'].update(
             'Lidars:\n' +
@@ -131,7 +137,6 @@ class GUIManager:
 
     def _format_str(self, a: Iterable):
         """
-
         :param set:
         :return:
         """
@@ -174,8 +179,8 @@ class GUIManager:
                 '\n' + '\n'.join(self._format_str(self.manager.get_position().values())) +
                 '\n\n' + '\n'.join(self._format_str(self.manager.get_orientation().values())))
 
-            self.main_window['-VEL_VAL-'].update(
-                '\n' + '\n'.join(self._format_str(self.manager.get_velocity().values())))
+            self.main_window['Pose'].update(
+                '\n' + ((self.pos(self.manager.get_lidars()))))
 
             self.main_window['-LID_VAL-'].update(
                 '\n' + '\n'.join(self._format_str(self.manager.get_lidars().values())))
@@ -191,7 +196,6 @@ class GUIManager:
 
     def __enter__(self) -> "GUIManager":
         """
-
         :return:
         """
         self._enter_called = True
@@ -203,7 +207,6 @@ class GUIManager:
 
     def __exit__(self, *args):
         """
-
         :param args:
         :return:
         """
@@ -212,6 +215,44 @@ class GUIManager:
             self.controller.__exit__(*args)
 
         # self.manager.terminate_algo()
+
+    def pos(self, lidars):
+
+        Result = ""
+        dist_front = 0.6  # m
+        tunnel_emergency = 2.1
+        lidar_infinity = 4
+        right_error = 0.5
+        flag1 = 0
+        fla2 = 0
+        flag3 = 0
+        info_str = ''
+        info_str += '\n'
+
+        if lidars["front"] > 0 and lidars["front"] < dist_front * 3:  # case close to wall
+            Result = "Rotate_CCW"
+            flag1 = 1
+        flag = 0
+        if lidars["right"] > lidar_infinity or lidars["right"] == right_error:
+            Result = "Turn_CW"
+            fla2=1
+
+            if lidars["front"] >= dist_front:
+                flag = 1
+            if flag == 0:
+                Result = "Turn_CW"
+                flag = 1
+
+        if lidars["left"] < tunnel_emergency and lidars["right"] < tunnel_emergency:
+            Result = "Tunnel"
+            flag3 = 1
+
+        if flag == 0 and flag1 == 0 and fla2 == 0 and flag3 == 0:
+            Result = "FlyForward"
+
+        print(Result)
+        return Result
+
 
 
 if __name__ == '__main__':
